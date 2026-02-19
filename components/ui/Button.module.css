@@ -93,6 +93,17 @@
     color: #fff;
 }
 
+.warning {
+    background-color: var(--color-warning-light);
+    color: var(--color-warning);
+    border: 1px solid transparent;
+}
+
+.warning:hover:not(:disabled) {
+    background-color: var(--color-warning);
+    color: #fff;
+}
+
 /* ─── States ──────────────────────────────────────────────── */
 .btn:disabled,
 .loading {
