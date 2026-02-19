@@ -1,0 +1,444 @@
+.root {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+/* ─── Tabs ───────────────────────────────────────────────── */
+.tabRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.tabBar {
+    display: flex;
+    gap: 4px;
+    background: var(--color-main-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 4px;
+}
+
+.tab {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 16px;
+    border: none;
+    background: none;
+    border-radius: calc(var(--radius-md) - 2px);
+    font-family: var(--font-family);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.tab:hover {
+    color: var(--color-text-primary);
+}
+
+.tabActive {
+    background: var(--color-card-bg) !important;
+    color: var(--color-primary) !important;
+    font-weight: 700;
+    box-shadow: var(--shadow-sm);
+}
+
+/* ─── Roles Layout ───────────────────────────────────────── */
+.rolesLayout {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 12px;
+    align-items: start;
+}
+
+/* ─── Role Sidebar ───────────────────────────────────────── */
+.roleSidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    background: var(--color-card-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 8px;
+    overflow: hidden;
+}
+
+.roleItem {
+    padding: 10px 12px;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    border-left: 3px solid transparent;
+    transition: all var(--transition-fast);
+}
+
+.roleItem:hover {
+    background: var(--color-main-bg);
+}
+
+.roleItemActive {
+    background: var(--color-main-bg) !important;
+}
+
+.roleItemTop {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 3px;
+}
+
+.roleItemName {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--color-text-primary);
+}
+
+.roleItemCount {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 1px 8px;
+    border-radius: var(--radius-full);
+}
+
+.roleItemDesc {
+    font-size: 11px;
+    color: var(--color-text-muted);
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* ─── Permission Matrix ──────────────────────────────────── */
+.permMatrix {
+    background: var(--color-card-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+}
+
+.permHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--color-border);
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.permHeaderLeft {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.permRole {
+    font-size: var(--font-size-lg);
+    font-weight: 800;
+}
+
+.permDesc {
+    font-size: 12px;
+    color: var(--color-text-muted);
+}
+
+.permYes {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: rgba(16, 185, 129, 0.12);
+    color: var(--color-success);
+}
+
+.permNo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: rgba(107, 114, 128, 0.1);
+    color: var(--color-text-muted);
+}
+
+/* ─── Table ──────────────────────────────────────────────── */
+.tableWrap {
+    overflow-x: auto;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    background: var(--color-card-bg);
+    box-shadow: var(--shadow-card);
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--font-size-sm);
+}
+
+.th {
+    padding: 10px 14px;
+    text-align: left;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    background: var(--color-main-bg);
+    border-bottom: 1px solid var(--color-border);
+    white-space: nowrap;
+}
+
+.thCenter {
+    text-align: center;
+}
+
+.row {
+    border-bottom: 1px solid var(--color-border-light);
+    transition: background var(--transition-fast);
+}
+
+.row:last-child {
+    border-bottom: none;
+}
+
+.row:hover {
+    background: var(--color-main-bg);
+}
+
+.td {
+    padding: 9px 14px;
+    vertical-align: middle;
+    color: var(--color-text-secondary);
+}
+
+.tdCenter {
+    text-align: center;
+}
+
+.moduleName {
+    font-weight: 600;
+    color: var(--color-text-primary);
+    font-size: 13px;
+}
+
+/* ─── Users Table ────────────────────────────────────────── */
+.nameCell {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--color-primary-light);
+    color: var(--color-primary);
+    font-size: 11px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.empName {
+    font-weight: 600;
+    color: var(--color-text-primary);
+}
+
+.emailCell {
+    font-size: 12px;
+    color: var(--color-text-secondary);
+}
+
+.mono {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+}
+
+.rowActions {
+    display: flex;
+    gap: 4px;
+}
+
+.actionBtn {
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    background: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-muted);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.actionBtn:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    background: var(--color-primary-light);
+}
+
+.deleteBtn:hover {
+    border-color: var(--color-danger);
+    color: var(--color-danger);
+    background: rgba(220, 38, 38, 0.08);
+}
+
+/* ─── Modal ──────────────────────────────────────────────── */
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    animation: fadeIn 0.18s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.modal {
+    background: var(--color-card-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-xl);
+    width: 100%;
+    max-width: 460px;
+    animation: slideUp 0.2s ease;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(16px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modalHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.modalTitle {
+    font-size: var(--font-size-base);
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin: 0;
+}
+
+.closeBtn {
+    width: 28px;
+    height: 28px;
+    border: none;
+    background: none;
+    font-size: 20px;
+    color: var(--color-text-muted);
+    cursor: pointer;
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.closeBtn:hover {
+    background: var(--color-border-light);
+}
+
+.modalBody {
+    padding: 20px;
+}
+
+.modalFooter {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    padding: 14px 20px;
+    border-top: 1px solid var(--color-border);
+}
+
+.formGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.formField {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.formField label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+}
+
+.formInput,
+.formSelect {
+    padding: 8px 10px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--color-main-bg);
+    font-family: var(--font-family);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-primary);
+    outline: none;
+    transition: border-color var(--transition-fast);
+}
+
+.formInput:focus,
+.formSelect:focus {
+    border-color: var(--color-primary);
+}
+
+.pwWrap {
+    position: relative;
+}
+
+.pwWrap .formInput {
+    width: 100%;
+    padding-right: 36px;
+    box-sizing: border-box;
+}
+
+.eyeBtn {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--color-text-muted);
+    cursor: pointer;
+    display: flex;
+}

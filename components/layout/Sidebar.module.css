@@ -1,0 +1,284 @@
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: var(--sidebar-width);
+    height: 100vh;
+    background-color: var(--color-sidebar-bg);
+    border-right: 1px solid var(--color-border);
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+    overflow: hidden;
+    transition: background-color var(--transition-slow);
+}
+
+/* ─── Logo Area ─────────────────────────────────────────── */
+.logoArea {
+    padding: 18px 16px 16px;
+    border-bottom: 1px solid var(--color-border);
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.logoArea img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    /* display controlled by .logoLight / .logoDark below */
+}
+
+/* Light mode: show original logo, hide dark variant */
+.logoLight {
+    display: block;
+}
+
+.logoDark {
+    display: none;
+}
+
+/* Dark mode: :global() required — data-theme is on <html>, outside this module's scope */
+:global([data-theme='dark']) .logoLight {
+    display: none;
+}
+
+:global([data-theme='dark']) .logoDark {
+    display: block;
+    filter: brightness(0) invert(1);
+}
+
+.logoSub {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--color-text-muted);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+/* ─── Navigation ────────────────────────────────────────── */
+.nav {
+    flex: 1;
+    overflow-y: auto;
+    padding: 12px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.sectionLabel {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--color-text-muted);
+    padding: 12px 10px 6px;
+    text-transform: uppercase;
+}
+
+.sectionLabelSpaced {
+    margin-top: 8px;
+}
+
+/* ─── Nav Item ─────────────────────────────────────────── */
+.navItem {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-base);
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    transition: background-color var(--transition-fast), color var(--transition-fast);
+    text-decoration: none;
+    width: 100%;
+    text-align: left;
+    position: relative;
+    outline: none;
+}
+
+.navItem:hover {
+    background-color: var(--color-border-light);
+    color: var(--color-text-primary);
+}
+
+.navItemActive {
+    background-color: var(--color-primary-light);
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+.navItemActive .navIcon svg {
+    color: var(--color-primary);
+}
+
+.navItemParentActive {
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+.navGroupToggle {
+    background: none;
+    border: none;
+    font-family: var(--font-family);
+}
+
+.navIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    flex-shrink: 0;
+    color: inherit;
+}
+
+.navLabel {
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.chevron {
+    display: flex;
+    align-items: center;
+    color: var(--color-text-muted);
+    transition: transform var(--transition-fast);
+    flex-shrink: 0;
+}
+
+.chevronOpen {
+    color: var(--color-text-secondary);
+}
+
+/* ─── Nav Group ─────────────────────────────────────────── */
+.navGroup {
+    display: flex;
+    flex-direction: column;
+}
+
+/* ─── Sub Menu ─────────────────────────────────────────── */
+.subMenu {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    padding: 2px 0 4px 30px;
+    animation: slideIn 0.2s ease both;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.subItem {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 10px;
+    border-radius: var(--radius-sm);
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    transition: background-color var(--transition-fast), color var(--transition-fast);
+    position: relative;
+}
+
+.subItem:hover {
+    background-color: var(--color-border-light);
+    color: var(--color-text-primary);
+}
+
+.subItemActive {
+    color: var(--color-primary);
+    font-weight: 600;
+    background-color: var(--color-primary-light);
+}
+
+.subDot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: var(--color-border);
+    flex-shrink: 0;
+    transition: background-color var(--transition-fast);
+}
+
+.subItemActive .subDot {
+    background-color: var(--color-primary);
+}
+
+/* ─── User Strip ────────────────────────────────────────── */
+.userStrip {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 16px;
+    border-top: 1px solid var(--color-border);
+    background-color: var(--color-sidebar-bg);
+    flex-shrink: 0;
+}
+
+.userAvatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: var(--color-primary-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: var(--color-primary);
+}
+
+.userInfo {
+    flex: 1;
+    min-width: 0;
+}
+
+.userName {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.userRole {
+    display: block;
+    font-size: 11px;
+    color: var(--color-text-muted);
+    margin-top: 1px;
+}
+
+.userMenu {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-sm);
+    color: var(--color-text-muted);
+    transition: background-color var(--transition-fast), color var(--transition-fast);
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.userMenu:hover {
+    background-color: var(--color-border-light);
+    color: var(--color-text-primary);
+}

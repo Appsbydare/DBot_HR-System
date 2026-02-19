@@ -1,0 +1,732 @@
+/* ─── Shared component styles for Deductions, Additions, Loans ─── */
+
+.root {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* ─── Summary Chips / Row ────────────────────────────────── */
+.summaryRow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.summaryChip {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 10px 14px;
+    border-radius: var(--radius-md);
+    border-left: 3px solid;
+    cursor: pointer;
+    transition: opacity var(--transition-fast), transform var(--transition-fast);
+    min-width: 110px;
+}
+
+.summaryChip:hover {
+    opacity: 0.85;
+    transform: translateY(-1px);
+}
+
+.chipType {
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.chipCount {
+    font-size: 10px;
+    color: var(--color-text-muted);
+    font-weight: 500;
+}
+
+.chipAmount {
+    font-size: 14px;
+    font-weight: 700;
+    margin-top: 2px;
+}
+
+/* ─── Toolbar ────────────────────────────────────────────── */
+.toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.searchWrap {
+    position: relative;
+    flex: 1;
+    min-width: 200px;
+    max-width: 280px;
+}
+
+.searchIcon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-text-muted);
+    pointer-events: none;
+}
+
+.searchInput {
+    width: 100%;
+    padding: 8px 12px 8px 34px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--color-card-bg);
+    font-family: var(--font-family);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-primary);
+    outline: none;
+    transition: border-color var(--transition-fast);
+}
+
+.searchInput:focus {
+    border-color: var(--color-primary);
+}
+
+.toolbarRight {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.filterSel {
+    padding: 7px 10px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--color-card-bg);
+    font-family: var(--font-family);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-primary);
+    cursor: pointer;
+    outline: none;
+}
+
+/* ─── Total Callout Bar ──────────────────────────────────── */
+.totalBar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 16px;
+    background: var(--color-main-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    flex-wrap: wrap;
+}
+
+.totalIcon {
+    color: var(--color-primary);
+    flex-shrink: 0;
+}
+
+.totalAmount {
+    font-size: var(--font-size-lg);
+    font-weight: 800;
+    color: var(--color-text-primary);
+}
+
+.totalSub {
+    color: var(--color-text-muted);
+    font-size: 12px;
+}
+
+.clearFilter {
+    margin-left: auto;
+    padding: 3px 10px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-full);
+    background: none;
+    font-family: var(--font-family);
+    font-size: 12px;
+    color: var(--color-text-muted);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.clearFilter:hover {
+    border-color: var(--color-danger);
+    color: var(--color-danger);
+}
+
+/* ─── Table ──────────────────────────────────────────────── */
+.tableWrap {
+    overflow-x: auto;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    background: var(--color-card-bg);
+    box-shadow: var(--shadow-card);
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--font-size-sm);
+}
+
+.th {
+    padding: 11px 14px;
+    text-align: left;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    background: var(--color-main-bg);
+    border-bottom: 1px solid var(--color-border);
+    white-space: nowrap;
+}
+
+.row {
+    border-bottom: 1px solid var(--color-border-light);
+    transition: background var(--transition-fast);
+}
+
+.row:last-child {
+    border-bottom: none;
+}
+
+.row:hover {
+    background: var(--color-main-bg);
+}
+
+.td {
+    padding: 11px 14px;
+    vertical-align: middle;
+    color: var(--color-text-secondary);
+}
+
+.nameCell {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 160px;
+}
+
+.avatar {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: var(--color-primary-light);
+    color: var(--color-primary);
+    font-size: 12px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    flex-shrink: 0;
+}
+
+.empName {
+    display: block;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.empId {
+    display: block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    font-weight: 800;
+    color: var(--color-primary);
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+    margin-bottom: 1px;
+}
+
+.empMeta {
+    display: block;
+    font-size: 11px;
+    color: var(--color-text-muted);
+    margin-top: 1px;
+}
+
+.typeBadge {
+    display: inline-block;
+    padding: 3px 9px;
+    border-radius: var(--radius-full);
+    font-size: 11px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.desc {
+    color: var(--color-text-secondary);
+    font-size: 12px;
+}
+
+.mono {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+}
+
+.amount {
+    font-weight: 700;
+    color: var(--color-text-primary);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+}
+
+.otInfo {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--color-success);
+}
+
+.na {
+    color: var(--color-text-muted);
+}
+
+.rowActions {
+    display: flex;
+    gap: 4px;
+}
+
+.actionBtn {
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    background: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-muted);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.actionBtn:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    background: var(--color-primary-light);
+}
+
+.deleteBtn:hover {
+    border-color: var(--color-danger);
+    color: var(--color-danger);
+    background: var(--color-danger-light);
+}
+
+.empty {
+    text-align: center;
+    padding: 40px;
+    color: var(--color-text-muted);
+    font-size: var(--font-size-sm);
+}
+
+/* ─── Modal ──────────────────────────────────────────────── */
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 15, 30, 0.45);
+    backdrop-filter: blur(3px);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    animation: fadeIn 0.15s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.modal {
+    background: var(--color-card-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    width: 100%;
+    max-width: 540px;
+    box-shadow: var(--shadow-xl);
+    animation: slideUp 0.2s ease;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(16px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modalHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.modalTitle {
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin: 0;
+}
+
+.closeBtn {
+    width: 30px;
+    height: 30px;
+    border: none;
+    background: var(--color-border-light);
+    border-radius: 50%;
+    font-size: 18px;
+    cursor: pointer;
+    color: var(--color-text-muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    transition: all var(--transition-fast);
+}
+
+.closeBtn:hover {
+    background: var(--color-border);
+    color: var(--color-text-primary);
+}
+
+.modalBody {
+    padding: 20px 24px;
+}
+
+.modalFooter {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    padding: 14px 24px;
+    border-top: 1px solid var(--color-border);
+}
+
+.formGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.formField {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.formField label {
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    color: var(--color-text-primary);
+}
+
+.formInput,
+.formSelect {
+    padding: 8px 10px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--color-main-bg);
+    font-family: var(--font-family);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-primary);
+    outline: none;
+    transition: border-color var(--transition-fast);
+}
+
+.formInput:focus,
+.formSelect:focus {
+    border-color: var(--color-primary);
+}
+
+.fullWidth {
+    grid-column: 1 / -1;
+}
+
+.calcPreview {
+    padding: 8px 10px;
+    border: 1px dashed var(--color-border);
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-base);
+    font-weight: 700;
+    color: var(--color-success);
+    background: var(--color-success-light);
+}
+
+/* ─── Loan Tracker specific ──────────────────────────────── */
+.summaryCards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 12px;
+}
+
+.summaryCard {
+    background: var(--color-card-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    box-shadow: var(--shadow-sm);
+}
+
+.cardLabel {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.cardValue {
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.cardSub {
+    font-size: 11px;
+    color: var(--color-text-muted);
+}
+
+.filterRow {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+}
+
+.filterPill {
+    padding: 6px 14px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-full);
+    background: none;
+    font-family: var(--font-family);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.filterPill:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+}
+
+.filterPillActive {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    color: white !important;
+    font-weight: 700;
+}
+
+.loanList {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.loanCard {
+    background: var(--color-card-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+    transition: box-shadow var(--transition-fast);
+}
+
+.loanCard:hover {
+    box-shadow: var(--shadow-md);
+}
+
+.loanSettled {
+    opacity: 0.7;
+}
+
+.loanHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 14px 18px;
+    flex-wrap: wrap;
+}
+
+.loanEmp {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.loanHeaderRight {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.loanAmounts {
+    text-align: right;
+}
+
+.loanBalance {
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--color-text-primary);
+}
+
+.loanBalanceLabel {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--color-text-muted);
+}
+
+.loanTotal {
+    display: block;
+    font-size: 11px;
+    color: var(--color-text-muted);
+}
+
+.expandBtn {
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    background: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-muted);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.expandBtn:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+}
+
+.loanProgressRow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 18px 14px;
+    flex-wrap: wrap;
+}
+
+.progressBar {
+    flex: 1;
+    min-width: 120px;
+    height: 6px;
+    background: var(--color-border);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+}
+
+.progressFill {
+    height: 100%;
+    border-radius: var(--radius-full);
+    transition: width 0.4s ease;
+}
+
+.progressLabel {
+    font-size: 11px;
+    color: var(--color-text-muted);
+    white-space: nowrap;
+}
+
+/* ─── Installment Schedule ───────────────────────────────── */
+.scheduleWrap {
+    border-top: 1px solid var(--color-border);
+    padding: 16px 18px;
+    background: var(--color-main-bg);
+}
+
+.scheduleGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 8px;
+    margin-bottom: 14px;
+}
+
+.scheduleItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 10px;
+    border-radius: var(--radius-md);
+    border: 1px solid;
+    text-align: center;
+}
+
+.paid {
+    border-color: #A7F3D0;
+    background: #ECFDF5;
+}
+
+.unpaid {
+    border-color: var(--color-border);
+    background: var(--color-card-bg);
+}
+
+[data-theme='dark'] .paid {
+    border-color: #065F46;
+    background: rgba(16, 185, 129, 0.08);
+}
+
+[data-theme='dark'] .unpaid {
+    border-color: var(--color-border);
+    background: var(--color-card-bg);
+}
+
+.instNo {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--color-text-muted);
+}
+
+.instMonth {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--color-text-primary);
+}
+
+.instAmt {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--color-text-primary);
+}
+
+.instPaidIcon {
+    color: var(--color-success);
+}
+
+.instPendIcon {
+    color: var(--color-text-muted);
+}
+
+.scheduleActions {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}

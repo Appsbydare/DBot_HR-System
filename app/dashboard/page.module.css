@@ -1,0 +1,139 @@
+.page {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 1400px;
+    width: 100%;
+}
+
+/* ─── Page Header ─────────────────────────────────────────── */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.pageTitle {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    line-height: 1.2;
+    margin: 0;
+}
+
+.pageSubtitle {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    margin-top: 4px;
+}
+
+.liveBadge {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background-color: var(--color-success-light);
+    color: var(--color-success);
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: var(--radius-full);
+    white-space: nowrap;
+}
+
+.badgeDot {
+    width: 7px;
+    height: 7px;
+    background-color: var(--color-success);
+    border-radius: 50%;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.45;
+        transform: scale(0.7);
+    }
+}
+
+/* ─── Row 1: Stat Cards ───────────────────────────────────── */
+.statGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+@media (max-width: 1100px) {
+    .statGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .statGrid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ─── Row 2: Workforce + Upcoming Leaves ─────────────────── */
+.row2 {
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 16px;
+    align-items: stretch;
+    /* both cards same height */
+}
+
+/* Make children fill their grid cell height */
+.row2>* {
+    display: flex;
+    flex-direction: column;
+}
+
+@media (max-width: 1024px) {
+    .row2 {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ─── Row 3: [Attendance + Payroll] | [Activity] ─────────── */
+.row3 {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 16px;
+    align-items: stretch;
+}
+
+@media (max-width: 1024px) {
+    .row3 {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Left: Attendance chart on top, Payroll below */
+.row3Left {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    min-width: 0;
+}
+
+/* Right: Recent Activity fills full height of left column */
+.row3Right {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+/* Make RecentActivity card fill 100% of right column height */
+.row3Right>* {
+    flex: 1;
+}

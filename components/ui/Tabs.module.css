@@ -1,0 +1,78 @@
+.root {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+/* ─── Tab List ───────────────────────────────────────────── */
+.tabList {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    border-bottom: 2px solid var(--color-border);
+    padding: 0 2px;
+    overflow-x: auto;
+}
+
+/* ─── Individual Tab ────────────────────────────────────── */
+.tab {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 10px 16px;
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: color var(--transition-fast), border-color var(--transition-fast);
+    font-family: var(--font-family);
+    border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+    outline: none;
+}
+
+.tab:hover {
+    color: var(--color-text-primary);
+    background-color: var(--color-border-light);
+}
+
+.tab:focus-visible {
+    box-shadow: 0 0 0 2px var(--color-primary) inset;
+}
+
+.active {
+    color: var(--color-primary) !important;
+    border-bottom-color: var(--color-primary) !important;
+    font-weight: 700;
+}
+
+.tabIcon {
+    display: flex;
+    align-items: center;
+}
+
+/* ─── Badge ──────────────────────────────────────────────── */
+.badge {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 1px 6px;
+    border-radius: var(--radius-full);
+    background-color: var(--color-primary-light);
+    color: var(--color-primary);
+    min-width: 18px;
+    text-align: center;
+}
+
+.active .badge {
+    background-color: var(--color-primary);
+    color: #fff;
+}
+
+/* ─── Panel ──────────────────────────────────────────────── */
+.panel {
+    padding-top: 20px;
+}

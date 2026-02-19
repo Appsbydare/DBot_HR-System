@@ -1,0 +1,298 @@
+.root {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 0;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    background: var(--color-card-bg);
+    box-shadow: var(--shadow-card);
+    overflow: hidden;
+    min-height: 560px;
+}
+
+/* ─── Sidebar ────────────────────────────────────────────── */
+.sidebar {
+    border-right: 1px solid var(--color-border);
+    background: var(--color-main-bg);
+    padding: 12px 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    overflow-y: auto;
+}
+
+.sidebarLabel {
+    font-size: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-muted);
+    padding: 4px 8px 8px;
+    margin: 0;
+}
+
+.reportItem {
+    padding: 10px 12px;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    border: 1px solid transparent;
+}
+
+.reportItem:hover {
+    background: var(--color-card-bg);
+}
+
+.reportItemActive {
+    background: var(--color-primary-light) !important;
+    border-color: rgba(230, 57, 70, 0.2);
+}
+
+.reportItemTop {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px;
+    margin-bottom: 4px;
+}
+
+.reportItemTitle {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    flex: 1;
+}
+
+.reportItemActive .reportItemTitle {
+    color: var(--color-primary);
+}
+
+.reportItemDesc {
+    font-size: 11px;
+    color: var(--color-text-muted);
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* ─── Panel ──────────────────────────────────────────────── */
+.panel {
+    display: flex;
+    flex-direction: column;
+}
+
+.panelHeader {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 18px 20px;
+    border-bottom: 1px solid var(--color-border);
+    flex-wrap: wrap;
+}
+
+.panelTitle {
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin: 0 0 4px;
+}
+
+.panelDesc {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+    margin: 0;
+}
+
+.panelActions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+}
+
+/* ─── Filters ────────────────────────────────────────────── */
+.filters {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 20px;
+    border-bottom: 1px solid var(--color-border);
+    background: var(--color-main-bg);
+    flex-wrap: wrap;
+}
+
+.filterGroup {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.filterIcon {
+    color: var(--color-text-muted);
+    flex-shrink: 0;
+}
+
+.filterSel {
+    padding: 6px 10px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--color-card-bg);
+    font-family: var(--font-family);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-primary);
+    outline: none;
+    cursor: pointer;
+}
+
+.filterSearch {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex: 1;
+    min-width: 160px;
+    max-width: 240px;
+}
+
+.filterInput {
+    width: 100%;
+    padding: 6px 10px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--color-card-bg);
+    font-family: var(--font-family);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-primary);
+    outline: none;
+    transition: border-color var(--transition-fast);
+}
+
+.filterInput:focus {
+    border-color: var(--color-primary);
+}
+
+.rowCount {
+    font-size: 12px;
+    color: var(--color-text-muted);
+    margin-left: auto;
+}
+
+/* ─── Table ──────────────────────────────────────────────── */
+.tableWrap {
+    overflow-x: auto;
+    flex: 1;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--font-size-sm);
+}
+
+.th {
+    padding: 10px 14px;
+    text-align: left;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    background: var(--color-main-bg);
+    border-bottom: 1px solid var(--color-border);
+    white-space: nowrap;
+}
+
+.row {
+    border-bottom: 1px solid var(--color-border-light);
+    transition: background var(--transition-fast);
+}
+
+.row:hover {
+    background: var(--color-main-bg);
+}
+
+.row:last-child {
+    border-bottom: none;
+}
+
+.td {
+    padding: 10px 14px;
+    vertical-align: middle;
+    color: var(--color-text-secondary);
+}
+
+.mono {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--color-text-muted);
+}
+
+.empName {
+    font-weight: 600;
+    color: var(--color-text-primary);
+}
+
+.money {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+}
+
+.negative {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--color-danger);
+    font-weight: 600;
+}
+
+.netPay {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--color-success);
+}
+
+.footerRow {
+    background: var(--color-main-bg);
+    border-top: 2px solid var(--color-border);
+}
+
+.footerLabel {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    white-space: nowrap;
+}
+
+.footerVal {
+    font-weight: 800;
+    font-size: 13px;
+    color: var(--color-primary);
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.footerNeg {
+    font-weight: 800;
+    font-size: 13px;
+    color: var(--color-danger);
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.footerNet {
+    font-weight: 800;
+    font-size: 14px;
+    color: var(--color-success);
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.footerEpf {
+    font-weight: 600;
+    font-size: 12px;
+    color: var(--color-text-muted);
+    font-family: 'JetBrains Mono', monospace;
+}

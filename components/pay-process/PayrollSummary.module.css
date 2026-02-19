@@ -1,0 +1,388 @@
+.root {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* ─── Stats Row ──────────────────────────────────────────── */
+.statsRow {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 12px;
+}
+
+.statCard {
+    background: var(--color-card-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    box-shadow: var(--shadow-sm);
+}
+
+.statIcon {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.statValue {
+    display: block;
+    font-size: 17px;
+    font-weight: 800;
+    line-height: 1.1;
+}
+
+.statLabel {
+    display: block;
+    font-size: 11px;
+    color: var(--color-text-muted);
+    margin-top: 2px;
+    font-weight: 500;
+}
+
+/* ─── Toolbar ────────────────────────────────────────────── */
+.toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.searchWrap {
+    position: relative;
+    flex: 1;
+    min-width: 200px;
+    max-width: 280px;
+}
+
+.searchIcon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-text-muted);
+    pointer-events: none;
+}
+
+.searchInput {
+    width: 100%;
+    padding: 8px 12px 8px 34px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--color-card-bg);
+    font-family: var(--font-family);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-primary);
+    outline: none;
+    transition: border-color var(--transition-fast);
+}
+
+.searchInput:focus {
+    border-color: var(--color-primary);
+}
+
+.toolbarRight {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.filterSel {
+    padding: 7px 10px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--color-card-bg);
+    font-family: var(--font-family);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-primary);
+    cursor: pointer;
+    outline: none;
+}
+
+/* ─── Table ──────────────────────────────────────────────── */
+.tableWrap {
+    overflow-x: auto;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    background: var(--color-card-bg);
+    box-shadow: var(--shadow-card);
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--font-size-sm);
+}
+
+.th {
+    padding: 11px 14px;
+    text-align: left;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    background: var(--color-main-bg);
+    border-bottom: 1px solid var(--color-border);
+    white-space: nowrap;
+}
+
+.row {
+    border-bottom: 1px solid var(--color-border-light);
+    transition: background var(--transition-fast);
+}
+
+.row:hover {
+    background: var(--color-main-bg);
+}
+
+.td {
+    padding: 11px 14px;
+    vertical-align: middle;
+    color: var(--color-text-secondary);
+}
+
+.nameCell {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 160px;
+}
+
+.avatar {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: var(--color-primary-light);
+    color: var(--color-primary);
+    font-size: 12px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    flex-shrink: 0;
+}
+
+.empName {
+    display: block;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.empId {
+    display: block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    font-weight: 800;
+    color: var(--color-primary);
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+    margin-bottom: 1px;
+}
+
+.empMeta {
+    display: block;
+    font-size: 11px;
+    color: var(--color-text-muted);
+    margin-top: 1px;
+}
+
+.money {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+}
+
+.moneyBold {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--color-text-primary);
+}
+
+.netPay {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--color-success);
+}
+
+.positive {
+    color: var(--color-success);
+    font-weight: 600;
+}
+
+.negative {
+    color: var(--color-danger);
+    font-weight: 600;
+}
+
+.epfInfo {
+    font-size: 11px;
+    color: var(--color-text-muted);
+}
+
+.na {
+    color: var(--color-text-muted);
+}
+
+.expandBtn {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 5px 10px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    background: none;
+    font-family: var(--font-family);
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    white-space: nowrap;
+}
+
+.expandBtn:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    background: var(--color-primary-light);
+}
+
+/* ─── Expanded Breakdown ─────────────────────────────────── */
+.breakdownRow {
+    background: var(--color-main-bg);
+}
+
+.breakdownCell {
+    padding: 0;
+    border-bottom: 2px solid var(--color-primary);
+}
+
+.breakdownGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 0;
+    padding: 16px;
+    gap: 12px;
+}
+
+.breakdownSection {
+    background: var(--color-card-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 12px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.bsTitle {
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--color-text-muted);
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--color-border);
+    margin-bottom: 2px;
+}
+
+.bsItem {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: var(--color-text-secondary);
+}
+
+.bsPos {
+    color: var(--color-success);
+    font-weight: 600;
+}
+
+.bsNeg {
+    color: var(--color-danger);
+    font-weight: 600;
+}
+
+.bsEmpty {
+    font-size: 12px;
+    color: var(--color-text-muted);
+    font-style: italic;
+    text-align: center;
+    padding: 8px 0;
+}
+
+.bsTotal {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    border-top: 1px solid var(--color-border);
+    padding-top: 6px;
+    margin-top: 2px;
+}
+
+.bsNetTotal {
+    color: var(--color-success);
+    font-size: 15px;
+}
+
+.bsDivider {
+    height: 1px;
+    background: var(--color-border);
+    margin: 4px 0;
+}
+
+/* ─── Table Footer ───────────────────────────────────────── */
+.footerRow {
+    background: var(--color-main-bg);
+    border-top: 2px solid var(--color-border);
+}
+
+.footerLabel {
+    font-weight: 700;
+    font-size: 12px;
+    color: var(--color-text-primary);
+    white-space: nowrap;
+}
+
+.footerGross {
+    font-weight: 800;
+    font-size: 13px;
+    color: var(--color-primary);
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.footerDed {
+    font-weight: 800;
+    font-size: 13px;
+    color: var(--color-danger);
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.footerNet {
+    font-weight: 800;
+    font-size: 14px;
+    color: var(--color-success);
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.footerEpf {
+    font-weight: 600;
+    font-size: 12px;
+    color: var(--color-text-muted);
+    font-family: 'JetBrains Mono', monospace;
+}

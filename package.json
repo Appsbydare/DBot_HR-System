@@ -1,0 +1,32 @@
+{
+  "name": "bondtex-hr",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "next": "16.1.6",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "@supabase/supabase-js": "^2.49.1",
+    "@supabase/ssr": "^0.6.1",
+    "react-hook-form": "^7.54.2",
+    "recharts": "^2.15.1",
+    "date-fns": "^4.1.0",
+    "react-hot-toast": "^2.5.1",
+    "xlsx": "^0.18.5",
+    "lucide-react": "^0.477.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.1.6",
+    "typescript": "^5"
+  }
+}

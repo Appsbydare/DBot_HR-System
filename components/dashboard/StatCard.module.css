@@ -1,0 +1,154 @@
+.card {
+    background-color: var(--color-card-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 22px 24px;
+    box-shadow: var(--shadow-card);
+    transition: box-shadow var(--transition-base), transform var(--transition-base);
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-primary), transparent);
+    opacity: 0;
+    transition: opacity var(--transition-base);
+}
+
+.card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-2px);
+}
+
+.card:hover::before {
+    opacity: 1;
+}
+
+/* ─── Color Variants ──────────────────────────────────────── */
+.card_blue::before {
+    background: linear-gradient(90deg, var(--color-info), transparent);
+}
+
+.card_orange::before {
+    background: linear-gradient(90deg, var(--color-warning), transparent);
+}
+
+.card_purple::before {
+    background: linear-gradient(90deg, #8B5CF6, transparent);
+}
+
+/* ─── Header ─────────────────────────────────────────────── */
+.header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.meta {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.label {
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    color: var(--color-text-secondary);
+}
+
+.value {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    line-height: 1;
+    letter-spacing: -0.5px;
+}
+
+/* ─── Icon ───────────────────────────────────────────────── */
+.iconWrap {
+    width: 46px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-md);
+    flex-shrink: 0;
+    opacity: 0.85;
+    position: relative;
+}
+
+/* Ghosted large icon background */
+.iconWrap svg {
+    width: 22px;
+    height: 22px;
+}
+
+.iconWrap_default {
+    background-color: var(--color-primary-light);
+    color: var(--color-primary);
+}
+
+.iconWrap_blue {
+    background-color: var(--color-info-light);
+    color: var(--color-info);
+}
+
+.iconWrap_orange {
+    background-color: var(--color-warning-light);
+    color: var(--color-warning);
+}
+
+.iconWrap_purple {
+    background-color: #EDE9FE;
+    color: #8B5CF6;
+}
+
+/* ─── Footer ─────────────────────────────────────────────── */
+.footer {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 16px;
+    flex-wrap: wrap;
+}
+
+.trend {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: var(--radius-full);
+}
+
+.trendUp {
+    background-color: var(--color-success-light);
+    color: var(--color-success);
+}
+
+.trendDown {
+    background-color: var(--color-danger-light);
+    color: var(--color-danger);
+}
+
+.trendLabel {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-muted);
+}
+
+.sub {
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    color: var(--color-warning);
+    background: var(--color-warning-light);
+    padding: 3px 8px;
+    border-radius: var(--radius-full);
+}

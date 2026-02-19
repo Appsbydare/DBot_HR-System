@@ -1,0 +1,301 @@
+.root {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* ─── Header ─────────────────────────────────────────────── */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.monthNav {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.monthLabel {
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    color: var(--color-text-primary);
+    min-width: 160px;
+    text-align: center;
+}
+
+.navBtn {
+    width: 32px;
+    height: 32px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    background: var(--color-card-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.navBtn:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+}
+
+.headerRight {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.filterSel {
+    height: 36px;
+    padding: 0 28px 0 11px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--color-card-bg);
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    background-size: 16px;
+    appearance: none;
+    font-family: var(--font-family);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-primary);
+    outline: none;
+    cursor: pointer;
+}
+
+/* ─── Legend ─────────────────────────────────────────────── */
+.legend {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    padding: 10px 14px;
+    background: var(--color-main-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+}
+
+.legendItem {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.legendDot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.legendHint {
+    margin-left: auto;
+    font-size: 10px;
+    color: var(--color-text-muted);
+    font-style: italic;
+    font-weight: 400;
+}
+
+/* ─── Grid Wrapper ───────────────────────────────────────── */
+.gridWrap {
+    overflow-x: auto;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    background: var(--color-card-bg);
+    box-shadow: var(--shadow-card);
+}
+
+/* ─── Grid Table ─────────────────────────────────────────── */
+.grid {
+    border-collapse: collapse;
+    font-size: var(--font-size-xs);
+    min-width: 100%;
+}
+
+/* ─── Employee Column ────────────────────────────────────── */
+.empCol {
+    padding: 10px 14px;
+    text-align: left;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-text-muted);
+    background: var(--color-main-bg);
+    border-bottom: 1px solid var(--color-border);
+    border-right: 2px solid var(--color-border);
+    position: sticky;
+    left: 0;
+    z-index: 2;
+    min-width: 160px;
+    white-space: nowrap;
+}
+
+/* ─── Day Column Header ──────────────────────────────────── */
+.dayCol {
+    padding: 6px 3px;
+    text-align: center;
+    background: var(--color-main-bg);
+    border-bottom: 1px solid var(--color-border);
+    min-width: 30px;
+    width: 30px;
+}
+
+.weekendCol {
+    background: #F8F0F0;
+}
+
+[data-theme='dark'] .weekendCol {
+    background: rgba(230, 57, 70, 0.06);
+}
+
+.dayNum {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    line-height: 1.2;
+}
+
+.dayName {
+    display: block;
+    font-size: 9px;
+    color: var(--color-text-muted);
+    font-weight: 500;
+}
+
+/* ─── Summary Columns ────────────────────────────────────── */
+.summaryCol {
+    padding: 6px 8px;
+    text-align: center;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    background: var(--color-main-bg);
+    border-bottom: 1px solid var(--color-border);
+    border-left: 1px solid var(--color-border);
+    min-width: 28px;
+}
+
+/* ─── Employee Row ───────────────────────────────────────── */
+.empRow {
+    border-bottom: 1px solid var(--color-border-light);
+    transition: background-color var(--transition-fast);
+}
+
+.empRow:last-child {
+    border-bottom: none;
+}
+
+.empRow:hover {
+    background: var(--color-main-bg);
+}
+
+.empCell {
+    padding: 8px 14px;
+    position: sticky;
+    left: 0;
+    background: var(--color-card-bg);
+    border-right: 2px solid var(--color-border);
+    z-index: 1;
+    white-space: nowrap;
+}
+
+.empRow:hover .empCell {
+    background: var(--color-main-bg);
+}
+
+.empName {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--color-text-primary);
+}
+
+.empDept {
+    display: block;
+    font-size: 10px;
+    color: var(--color-text-muted);
+    margin-top: 1px;
+}
+
+/* ─── Attendance Cell ────────────────────────────────────── */
+.cell {
+    padding: 4px 2px;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    transition: background-color var(--transition-fast);
+    border-right: 1px solid var(--color-border-light);
+}
+
+.cell:last-child {
+    border-right: none;
+}
+
+.cell:hover:not(.weekendCell):not(.futureCell) {
+    background: var(--color-primary-light);
+}
+
+.weekendCell {
+    background: #F8F0F0;
+    cursor: default;
+}
+
+[data-theme='dark'] .weekendCell {
+    background: rgba(230, 57, 70, 0.06);
+}
+
+.futureCell {
+    cursor: default;
+    opacity: 0.3;
+}
+
+.statusChip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 20px;
+    border-radius: 4px;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 0;
+}
+
+/* ─── Summary Cells ──────────────────────────────────────── */
+.summaryCell {
+    padding: 6px 8px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 700;
+    border-left: 1px solid var(--color-border-light);
+}
+
+.present {
+    color: #10B981;
+}
+
+.absent {
+    color: #EF4444;
+}
+
+.half {
+    color: #F59E0B;
+}
+
+.leave {
+    color: #3B82F6;
+}

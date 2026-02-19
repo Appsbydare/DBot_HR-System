@@ -1,0 +1,477 @@
+.root {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* ─── Tab Row ────────────────────────────────────────────── */
+.tabRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tabBar {
+    display: flex;
+    gap: 4px;
+    background: var(--color-main-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 4px;
+}
+
+.tab {
+    padding: 7px 18px;
+    border: none;
+    background: none;
+    border-radius: calc(var(--radius-md) - 2px);
+    font-family: var(--font-family);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.tab:hover {
+    color: var(--color-text-primary);
+}
+
+.tabActive {
+    background: var(--color-card-bg) !important;
+    color: var(--color-primary) !important;
+    font-weight: 700;
+    box-shadow: var(--shadow-sm);
+}
+
+.headerRight {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.monthSel {
+    padding: 7px 12px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--color-card-bg);
+    font-family: var(--font-family);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-primary);
+    cursor: pointer;
+    outline: none;
+}
+
+.resetBtn {
+    padding: 7px 14px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: none;
+    font-family: var(--font-family);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.resetBtn:hover {
+    border-color: var(--color-danger);
+    color: var(--color-danger);
+}
+
+/* ─── Period Banner ──────────────────────────────────────── */
+.periodBanner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 20px;
+    background: linear-gradient(135deg, var(--color-primary-light) 0%, #FFF5F5 100%);
+    border: 1px solid rgba(230, 57, 70, 0.2);
+    border-radius: var(--radius-lg);
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+[data-theme='dark'] .periodBanner {
+    background: linear-gradient(135deg, rgba(230, 57, 70, 0.15), rgba(230, 57, 70, 0.06));
+    border-color: rgba(230, 57, 70, 0.25);
+}
+
+.periodLeft {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.periodIcon {
+    color: var(--color-primary);
+    flex-shrink: 0;
+}
+
+.periodTitle {
+    display: block;
+    font-size: var(--font-size-base);
+    font-weight: 700;
+    color: var(--color-text-primary);
+}
+
+.periodSub {
+    display: block;
+    font-size: 12px;
+    color: var(--color-text-muted);
+    margin-top: 2px;
+}
+
+.progressPills {
+    display: flex;
+    align-items: center;
+    gap: 0;
+}
+
+.progressDot {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 2px solid var(--color-border);
+    background: var(--color-card-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--color-text-muted);
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.progressDotReady {
+    border-color: var(--color-warning);
+    color: var(--color-warning);
+    background: #FEF3C7;
+}
+
+.progressDotDone {
+    border-color: var(--color-success);
+    background: var(--color-success);
+    color: white;
+}
+
+.progressLine {
+    width: 32px;
+    height: 2px;
+    background: var(--color-border);
+    transition: background 0.4s ease;
+}
+
+.progressLineDone {
+    background: var(--color-success);
+}
+
+/* ─── Done Banner ────────────────────────────────────────── */
+.doneBanner {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 20px;
+    background: linear-gradient(135deg, #ECFDF5, #D1FAE5);
+    border: 1px solid #A7F3D0;
+    border-radius: var(--radius-lg);
+    flex-wrap: wrap;
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+[data-theme='dark'] .doneBanner {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(16, 185, 129, 0.07));
+    border-color: rgba(16, 185, 129, 0.3);
+}
+
+.doneIcon {
+    color: var(--color-success);
+    flex-shrink: 0;
+}
+
+.doneTitle {
+    font-size: var(--font-size-base);
+    font-weight: 700;
+    color: #065F46;
+    margin: 0;
+}
+
+[data-theme='dark'] .doneTitle {
+    color: var(--color-success);
+}
+
+.doneSub {
+    font-size: 12px;
+    color: #059669;
+    margin: 0;
+    margin-top: 2px;
+}
+
+.doneActions {
+    display: flex;
+    gap: 8px;
+    margin-left: auto;
+    flex-wrap: wrap;
+}
+
+/* ─── Steps ──────────────────────────────────────────────── */
+.stepsList {
+    display: flex;
+    flex-direction: column;
+}
+
+.connector {
+    width: 2px;
+    height: 20px;
+    background: var(--color-border);
+    margin: 0 auto;
+    transition: background 0.4s ease;
+}
+
+.connectorDone {
+    background: var(--color-success);
+}
+
+.stepCard {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px 22px;
+    background: var(--color-card-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+}
+
+.stepCard:hover {
+    box-shadow: var(--shadow-md);
+}
+
+.stepLocked {
+    opacity: 0.55;
+    filter: grayscale(0.3);
+}
+
+.stepDone {
+    border-color: #A7F3D0;
+    background: linear-gradient(135deg, var(--color-card-bg), #F0FDF4);
+}
+
+[data-theme='dark'] .stepDone {
+    border-color: rgba(16, 185, 129, 0.25);
+    background: rgba(16, 185, 129, 0.05);
+}
+
+/* Step icon */
+.stepIconWrap {
+    width: 52px;
+    height: 52px;
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.stepIconDone {
+    background: var(--color-success);
+    color: white;
+}
+
+.stepIconReady {
+    background: var(--color-primary);
+    color: white;
+}
+
+.stepIconLocked {
+    background: var(--color-border-light);
+    color: var(--color-text-muted);
+}
+
+.stepContent {
+    flex: 1;
+    min-width: 0;
+}
+
+.stepHeader {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 4px;
+}
+
+.stepNum {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--color-text-muted);
+}
+
+.completedAt {
+    font-size: 11px;
+    color: var(--color-success);
+    font-weight: 500;
+    margin-left: auto;
+}
+
+.stepTitle {
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin: 0 0 6px 0;
+}
+
+.stepDesc {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    margin: 0 0 10px 0;
+    line-height: 1.5;
+}
+
+.detailList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.detailItem {
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    font-size: 12px;
+    color: var(--color-text-muted);
+}
+
+.detailIcon {
+    color: var(--color-primary);
+    flex-shrink: 0;
+    margin-top: 1px;
+}
+
+.stepAction {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    min-width: 160px;
+}
+
+/* ─── History Table ──────────────────────────────────────── */
+.historyWrap {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.tableWrap {
+    overflow-x: auto;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    background: var(--color-card-bg);
+    box-shadow: var(--shadow-card);
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--font-size-sm);
+}
+
+.th {
+    padding: 11px 14px;
+    text-align: left;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    background: var(--color-main-bg);
+    border-bottom: 1px solid var(--color-border);
+    white-space: nowrap;
+}
+
+.row {
+    border-bottom: 1px solid var(--color-border-light);
+    transition: background var(--transition-fast);
+}
+
+.row:last-child {
+    border-bottom: none;
+}
+
+.row:hover {
+    background: var(--color-main-bg);
+}
+
+.td {
+    padding: 12px 14px;
+    vertical-align: middle;
+    color: var(--color-text-secondary);
+}
+
+.monthCell {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 700;
+    color: var(--color-text-primary);
+}
+
+.money {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+}
+
+.moneyNet {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--color-success);
+}
+
+.rowActions {
+    display: flex;
+    gap: 4px;
+}
+
+.actionBtn {
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    background: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-muted);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.actionBtn:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    background: var(--color-primary-light);
+}

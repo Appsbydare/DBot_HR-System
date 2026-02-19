@@ -1,0 +1,215 @@
+.card {
+    background-color: var(--color-card-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 22px 24px;
+    box-shadow: var(--shadow-card);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    transition: box-shadow var(--transition-base);
+    /* Fill the full grid cell */
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.card:hover {
+    box-shadow: var(--shadow-lg);
+}
+
+.title {
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    color: var(--color-text-primary);
+}
+
+/* ─── Calendar ────────────────────────────────────────────── */
+.calendar {
+    background-color: var(--color-main-bg);
+    border-radius: var(--radius-md);
+    padding: 14px;
+}
+
+.calHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.calMonth {
+    font-size: var(--font-size-sm);
+    font-weight: 700;
+    color: var(--color-text-primary);
+}
+
+.calBtn {
+    width: 26px;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-sm);
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    transition: background-color var(--transition-fast), color var(--transition-fast);
+    background: none;
+    border: none;
+}
+
+.calBtn:hover {
+    background-color: var(--color-border);
+    color: var(--color-text-primary);
+}
+
+.calGrid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+}
+
+.calDow {
+    text-align: center;
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--color-text-muted);
+    padding-bottom: 4px;
+    text-transform: uppercase;
+}
+
+.calDay {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 28px;
+    font-size: var(--font-size-xs);
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: background-color var(--transition-fast);
+}
+
+.calDay:hover {
+    background-color: var(--color-border);
+}
+
+.calToday {
+    background-color: var(--color-primary) !important;
+    color: #fff !important;
+    font-weight: 700;
+}
+
+.calHasLeave {
+    font-weight: 600;
+    color: var(--color-text-primary);
+}
+
+.calDot {
+    position: absolute;
+    bottom: 2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 4px;
+    background-color: var(--color-warning);
+    border-radius: 50%;
+}
+
+.calToday .calDot {
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+/* ─── Leave List ─────────────────────────────────────────── */
+.leaveList {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    flex: 1;
+    overflow-y: auto;
+    min-height: 80px;
+}
+
+.leaveItem {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 4px;
+    border-bottom: 1px solid var(--color-border-light);
+    transition: background-color var(--transition-fast);
+    border-radius: var(--radius-sm);
+}
+
+.leaveItem:last-child {
+    border-bottom: none;
+}
+
+.leaveItem:hover {
+    background-color: var(--color-border-light);
+}
+
+.leaveDate {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 36px;
+    background-color: var(--color-primary-light);
+    border-radius: var(--radius-sm);
+    padding: 4px 6px;
+}
+
+.leaveMo {
+    font-size: 9px;
+    font-weight: 700;
+    color: var(--color-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.leaveDay {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--color-primary);
+    line-height: 1.1;
+}
+
+.leaveInfo {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.leaveName {
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.leaveEmpNo {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 800;
+    color: var(--color-primary);
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+}
+
+.leaveRole {
+    font-size: 11px;
+    color: var(--color-text-muted);
+}
+
+.leaveType {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: var(--radius-full);
+    white-space: nowrap;
+    flex-shrink: 0;
+}

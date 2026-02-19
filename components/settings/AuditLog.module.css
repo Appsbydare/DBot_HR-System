@@ -1,0 +1,324 @@
+.root {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* ─── Toolbar ────────────────────────────────────────────── */
+.toolbar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.searchWrap {
+    position: relative;
+    flex: 1;
+    min-width: 200px;
+    max-width: 320px;
+}
+
+.searchIcon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-text-muted);
+    pointer-events: none;
+}
+
+.searchInput {
+    width: 100%;
+    padding: 8px 12px 8px 34px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--color-card-bg);
+    font-family: var(--font-family);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-primary);
+    outline: none;
+    transition: border-color var(--transition-fast);
+}
+
+.searchInput:focus {
+    border-color: var(--color-primary);
+}
+
+.toolbarRight {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-left: auto;
+}
+
+.filterGroup {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.filterIcon {
+    color: var(--color-text-muted);
+    flex-shrink: 0;
+}
+
+.filterSel {
+    padding: 7px 10px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--color-card-bg);
+    font-family: var(--font-family);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-primary);
+    cursor: pointer;
+    outline: none;
+}
+
+.countBar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: var(--color-text-muted);
+}
+
+.count {
+    font-weight: 600;
+    color: var(--color-text-secondary);
+}
+
+/* ─── Table ──────────────────────────────────────────────── */
+.tableWrap {
+    overflow-x: auto;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    background: var(--color-card-bg);
+    box-shadow: var(--shadow-card);
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--font-size-sm);
+}
+
+.th {
+    padding: 10px 14px;
+    text-align: left;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    background: var(--color-main-bg);
+    border-bottom: 1px solid var(--color-border);
+    white-space: nowrap;
+}
+
+.row {
+    border-bottom: 1px solid var(--color-border-light);
+    transition: background var(--transition-fast);
+}
+
+.row:last-child {
+    border-bottom: none;
+}
+
+.row:hover {
+    background: var(--color-main-bg);
+}
+
+.rowDelete {
+    background: rgba(220, 38, 38, 0.03);
+}
+
+.rowWarn {
+    background: rgba(245, 158, 11, 0.03);
+}
+
+.td {
+    padding: 9px 14px;
+    vertical-align: middle;
+    color: var(--color-text-secondary);
+}
+
+.userCell {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--color-primary-light);
+    color: var(--color-primary);
+    font-size: 11px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.userName {
+    display: block;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    font-size: 13px;
+}
+
+.userRole {
+    display: block;
+    font-size: 11px;
+    color: var(--color-text-muted);
+}
+
+.mono {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+}
+
+.ipCell {
+    color: var(--color-text-muted);
+}
+
+.detailText {
+    font-size: 12px;
+    line-height: 1.4;
+    max-width: 280px;
+    display: block;
+}
+
+.expandBtn {
+    width: 28px;
+    height: 28px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    background: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-muted);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.expandBtn:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+}
+
+/* ─── Diff Row ───────────────────────────────────────────── */
+.diffRow {
+    background: var(--color-main-bg);
+}
+
+.diffCell {
+    padding: 10px 14px 14px;
+    border-bottom: 2px solid var(--color-primary);
+}
+
+.diffGrid {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.diffSection {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 160px;
+}
+
+.diffLabel {
+    font-size: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--color-text-muted);
+    margin-bottom: 4px;
+}
+
+.diffItem {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+}
+
+.diffKey {
+    color: var(--color-text-muted);
+    min-width: 80px;
+}
+
+.diffValOld {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--color-danger);
+    background: rgba(220, 38, 38, 0.08);
+    padding: 1px 6px;
+    border-radius: 3px;
+    text-decoration: line-through;
+}
+
+.diffValNew {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--color-success);
+    background: rgba(16, 185, 129, 0.08);
+    padding: 1px 6px;
+    border-radius: 3px;
+}
+
+/* ─── Pagination ─────────────────────────────────────────── */
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.pageInfo {
+    font-size: 12px;
+    color: var(--color-text-muted);
+}
+
+.pageButtons {
+    display: flex;
+    gap: 4px;
+}
+
+.pageBtn {
+    padding: 5px 10px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    background: none;
+    font-family: var(--font-family);
+    font-size: 12px;
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.pageBtn:hover:not(:disabled) {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+}
+
+.pageBtn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.pageBtnActive {
+    background: var(--color-primary) !important;
+    border-color: var(--color-primary) !important;
+    color: white !important;
+    font-weight: 700;
+}

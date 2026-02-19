@@ -1,0 +1,537 @@
+.page {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 1400px;
+    width: 100%;
+}
+
+.header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.pageTitle {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    line-height: 1.2;
+    margin: 0;
+}
+
+.pageSubtitle {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    margin-top: 4px;
+}
+
+/* ─── Stat Row ───────────────────────────────────────────── */
+.statsRow {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 12px;
+}
+
+.statCard {
+    background: var(--color-card-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    box-shadow: var(--shadow-sm);
+}
+
+.statIcon {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.statValue {
+    display: block;
+    font-size: var(--font-size-xl);
+    font-weight: 800;
+    color: var(--color-text-primary);
+    line-height: 1.1;
+}
+
+.statLabel {
+    display: block;
+    font-size: var(--font-size-xs);
+    color: var(--color-text-muted);
+    font-weight: 500;
+    margin-top: 2px;
+}
+
+/* ─── Table Card ─────────────────────────────────────────── */
+.tableCard {
+    overflow-x: auto;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    background: var(--color-card-bg);
+    box-shadow: var(--shadow-card);
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--font-size-sm);
+}
+
+.th {
+    padding: 11px 14px;
+    text-align: left;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    background: var(--color-main-bg);
+    border-bottom: 1px solid var(--color-border);
+    white-space: nowrap;
+}
+
+.row {
+    border-bottom: 1px solid var(--color-border-light);
+    transition: background-color var(--transition-fast);
+}
+
+.row:last-child {
+    border-bottom: none;
+}
+
+.row:hover {
+    background: var(--color-main-bg);
+}
+
+.alertRow {
+    background: #fff8f8;
+}
+
+[data-theme='dark'] .alertRow {
+    background: rgba(230, 57, 70, 0.04);
+}
+
+.td {
+    padding: 12px 14px;
+    vertical-align: middle;
+    color: var(--color-text-secondary);
+}
+
+.nameCell {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 160px;
+}
+
+.avatar {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: var(--color-primary-light);
+    color: var(--color-primary);
+    font-size: 12px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    text-transform: uppercase;
+}
+
+.empName {
+    display: block;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    white-space: nowrap;
+}
+
+.empNo {
+    display: block;
+    font-size: 11px;
+    color: var(--color-text-muted);
+    margin-top: 1px;
+}
+
+.dept {
+    display: block;
+    font-weight: 600;
+    color: var(--color-text-primary);
+}
+
+.section {
+    display: block;
+    font-size: 11px;
+    color: var(--color-text-muted);
+    margin-top: 1px;
+}
+
+.date {
+    font-size: 12px;
+    color: var(--color-text-secondary);
+    white-space: nowrap;
+}
+
+.tenure {
+    font-weight: 700;
+    color: var(--color-text-primary);
+}
+
+.money {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--color-text-secondary);
+}
+
+.moneyBold {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--color-text-primary);
+}
+
+.rate {
+    font-weight: 700;
+    color: var(--color-text-primary);
+}
+
+.mono {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+}
+
+.na {
+    color: var(--color-text-muted);
+    font-style: italic;
+}
+
+.iconYes {
+    color: var(--color-success);
+}
+
+.iconNo {
+    color: var(--color-text-muted);
+}
+
+.editBtn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 10px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    background: none;
+    font-family: var(--font-family);
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    white-space: nowrap;
+}
+
+.editBtn:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    background: var(--color-primary-light);
+}
+
+/* ─── Compliance Dashboard ───────────────────────────────── */
+.banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 16px 20px;
+    background: linear-gradient(135deg, #FFF7ED 0%, #FEF3C7 100%);
+    border: 1px solid #FDE68A;
+    border-radius: var(--radius-lg);
+    flex-wrap: wrap;
+}
+
+[data-theme='dark'] .banner {
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.12), rgba(251, 191, 36, 0.08));
+    border-color: rgba(245, 158, 11, 0.3);
+}
+
+.bannerLeft {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.bannerIcon {
+    color: #D97706;
+    flex-shrink: 0;
+}
+
+.bannerTitle {
+    font-size: var(--font-size-base);
+    font-weight: 700;
+    color: #92400E;
+    margin: 0;
+}
+
+[data-theme='dark'] .bannerTitle {
+    color: #FEF3C7;
+}
+
+.bannerSub {
+    font-size: var(--font-size-xs);
+    color: #B45309;
+    margin: 2px 0 0 0;
+}
+
+[data-theme='dark'] .bannerSub {
+    color: #FDE68A;
+}
+
+.bannerStatsRow {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.bannerStat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+
+.bannerNum {
+    font-size: 22px;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.bannerStat span:last-child {
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+/* ─── Alerts Grid ────────────────────────────────────────── */
+.alertsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 16px;
+}
+
+.alertCard {
+    background: var(--color-card-bg);
+    border: 1px solid var(--color-border);
+    border-top: 3px solid;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-card);
+    overflow: hidden;
+}
+
+.alertCardHeader {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--color-border-light);
+}
+
+.alertCardIcon {
+    width: 32px;
+    height: 32px;
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.alertCardTitle {
+    font-size: var(--font-size-base);
+    font-weight: 700;
+    color: var(--color-text-primary);
+    flex: 1;
+}
+
+.alertCardCount {
+    font-size: 12px;
+    font-weight: 800;
+    padding: 2px 9px;
+    border-radius: var(--radius-full);
+}
+
+.alertCardBody {
+    display: flex;
+    flex-direction: column;
+}
+
+.alertRow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--color-border-light);
+    transition: background var(--transition-fast);
+}
+
+.alertRow:last-child {
+    border-bottom: none;
+}
+
+.alertRow:hover {
+    background: var(--color-main-bg);
+}
+
+.alertAvatar {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    font-size: 12px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    text-transform: uppercase;
+}
+
+.alertInfo {
+    flex: 1;
+    min-width: 0;
+}
+
+.alertName {
+    display: block;
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    color: var(--color-text-primary);
+}
+
+.alertMeta {
+    display: block;
+    font-size: 11px;
+    color: var(--color-text-muted);
+    margin-top: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.alertRight {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.gapBadge {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: var(--radius-full);
+    background: #EDE9FE;
+    color: #7C3AED;
+    white-space: nowrap;
+}
+
+.actionArrow {
+    width: 26px;
+    height: 26px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    background: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-muted);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.actionArrow:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+}
+
+/* ─── Checklist ──────────────────────────────────────────── */
+.checklistCard {
+    background: var(--color-card-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    box-shadow: var(--shadow-card);
+}
+
+.checklistTitle {
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin: 0 0 16px 0;
+}
+
+.checklist {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 10px;
+}
+
+.checkItem {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 11px 14px;
+    border-radius: var(--radius-md);
+    border: 1px solid;
+    font-size: var(--font-size-sm);
+}
+
+.checkPass {
+    background: var(--color-success-light);
+    border-color: #A7F3D0;
+}
+
+[data-theme='dark'] .checkPass {
+    border-color: #065F46;
+}
+
+.checkFail {
+    background: var(--color-danger-light);
+    border-color: #FECACA;
+}
+
+[data-theme='dark'] .checkFail {
+    border-color: #7F1D1D;
+}
+
+.checkIconPass {
+    color: var(--color-success);
+    flex-shrink: 0;
+}
+
+.checkIconFail {
+    color: var(--color-danger);
+    flex-shrink: 0;
+}
+
+.checkLabel {
+    flex: 1;
+    font-weight: 500;
+    color: var(--color-text-primary);
+}
+
+.checkDetail {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--color-danger);
+}

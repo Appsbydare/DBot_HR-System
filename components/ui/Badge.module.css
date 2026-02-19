@@ -1,0 +1,54 @@
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 9px;
+    border-radius: var(--radius-full);
+    white-space: nowrap;
+    line-height: 1.4;
+}
+
+.dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: currentColor;
+}
+
+/* ─── Variants ───────────────────────────────────────────── */
+.default {
+    background: var(--color-border-light);
+    color: var(--color-text-secondary);
+}
+
+.success {
+    background: var(--color-success-light);
+    color: var(--color-success);
+}
+
+.warning {
+    background: var(--color-warning-light);
+    color: var(--color-warning);
+}
+
+.danger {
+    background: var(--color-danger-light);
+    color: var(--color-danger);
+}
+
+.info {
+    background: var(--color-info-light);
+    color: var(--color-info);
+}
+
+.purple {
+    background: #EDE9FE;
+    color: #7C3AED;
+}
+
+.muted {
+    background: var(--color-border-light);
+    color: var(--color-text-muted);
+}

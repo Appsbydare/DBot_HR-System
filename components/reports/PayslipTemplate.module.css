@@ -1,0 +1,369 @@
+.root {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* ─── Controls ───────────────────────────────────────────── */
+.controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+    padding: 14px 16px;
+    background: var(--color-card-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+}
+
+.controlLeft {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.controlRight {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.fieldGroup {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.fieldLabel {
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    color: var(--color-text-secondary);
+    white-space: nowrap;
+}
+
+.fieldSel {
+    padding: 7px 12px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--color-main-bg);
+    font-family: var(--font-family);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-primary);
+    outline: none;
+    cursor: pointer;
+}
+
+.langToggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 14px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-full);
+    background: none;
+    font-family: var(--font-family);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.langToggle:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+}
+
+.langSinhala {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    color: white !important;
+}
+
+/* ─── Payslip ────────────────────────────────────────────── */
+.payslip {
+    background: #fff;
+    border: 1px solid #E5E7EB;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.10);
+    padding: 32px 36px;
+    max-width: 720px;
+    margin: 0 auto;
+    width: 100%;
+    font-family: var(--font-family);
+    color: #111827;
+}
+
+.payslipSi {
+    font-family: 'Noto Sans Sinhala', 'Inter', sans-serif;
+}
+
+/* Header */
+.slipHeader {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 0;
+    gap: 16px;
+}
+
+.companyName {
+    font-size: 20px;
+    font-weight: 900;
+    color: var(--color-primary);
+    margin: 0 0 2px;
+    letter-spacing: -0.02em;
+}
+
+.companyNameSi {
+    font-size: 14px;
+    color: var(--color-primary);
+    margin: 0 0 4px;
+    opacity: 0.8;
+}
+
+.companyAddr {
+    font-size: 11px;
+    color: #6B7280;
+    margin: 0;
+}
+
+.slipTitle {
+    text-align: right;
+}
+
+.slipTitleText {
+    font-size: 18px;
+    font-weight: 800;
+    color: #111827;
+    margin: 0 0 4px;
+    letter-spacing: 0.05em;
+}
+
+.slipMonth {
+    font-size: 13px;
+    color: #6B7280;
+    margin: 0;
+}
+
+.divider {
+    height: 2px;
+    background: linear-gradient(90deg, var(--color-primary), #FFC107);
+    margin: 16px 0;
+    border-radius: 1px;
+}
+
+/* Employee Info */
+.empInfo {
+    margin-bottom: 20px;
+}
+
+.empInfoGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 8px;
+    padding: 14px;
+    background: #F9FAFB;
+    border-radius: var(--radius-md);
+    border: 1px solid #E5E7EB;
+}
+
+.infoItem {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.infoLabel {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #9CA3AF;
+}
+
+.infoValue {
+    font-size: 13px;
+    font-weight: 600;
+    color: #111827;
+}
+
+/* Pay Table */
+.payTable {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 16px;
+}
+
+@media (max-width: 580px) {
+    .payTable {
+        grid-template-columns: 1fr;
+    }
+}
+
+.paySection {
+    border: 1px solid #E5E7EB;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+}
+
+.paySectionHeader {
+    padding: 8px 12px;
+    background: #F3F4F6;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: #374151;
+}
+
+.payRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 7px 12px;
+    border-bottom: 1px solid #F3F4F6;
+    font-size: 13px;
+}
+
+.payLabel {
+    color: #6B7280;
+}
+
+.payAmount {
+    font-weight: 700;
+    color: #111827;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+}
+
+.dedAmount {
+    color: #DC2626;
+}
+
+.payEmpty {
+    padding: 12px;
+    text-align: center;
+    font-size: 12px;
+    color: #9CA3AF;
+    font-style: italic;
+}
+
+.payTotal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    background: #F9FAFB;
+    font-size: 13px;
+    font-weight: 700;
+    color: #111827;
+}
+
+.dedTotal {
+    color: #DC2626;
+}
+
+/* Net Pay Banner */
+.netBanner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    background: linear-gradient(135deg, var(--color-primary), #C1121F);
+    border-radius: var(--radius-md);
+    margin-bottom: 12px;
+}
+
+.netLabel {
+    font-size: 13px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.85);
+    letter-spacing: 0.06em;
+}
+
+.netAmount {
+    font-size: 26px;
+    font-weight: 900;
+    color: white;
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: -0.02em;
+}
+
+/* Employer + Bank */
+.employerRow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding: 10px 14px;
+    background: #F3F4F6;
+    border-radius: var(--radius-sm);
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+
+.employerLabel {
+    color: #6B7280;
+    font-weight: 500;
+}
+
+.employerVal {
+    font-weight: 700;
+    color: #111827;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.employerSep {
+    flex: 1;
+}
+
+.bankRow {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 8px 14px;
+    background: #EFF6FF;
+    border-radius: var(--radius-sm);
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+.bankLabel {
+    font-weight: 700;
+    color: #1D4ED8;
+}
+
+.bankVal {
+    color: #3B82F6;
+}
+
+/* Footer */
+.slipFooter {
+    border-top: 1px solid #E5E7EB;
+    padding-top: 14px;
+    text-align: center;
+    font-size: 11px;
+    color: #9CA3AF;
+}
+
+.slipFooter p {
+    margin: 2px 0;
+}
+
+/* Print Media */
+@media print {
+    .controls {
+        display: none !important;
+    }
+
+    .payslip {
+        box-shadow: none;
+        border: none;
+        padding: 0;
+    }
+}
