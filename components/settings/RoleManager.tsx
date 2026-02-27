@@ -105,13 +105,13 @@ const ROLE_CONFIGS: RoleConfig[] = [
 ];
 
 const USERS: SystemUser[] = [
-    { id: 'U001', name: 'Nimali Jayawardene', email: 'nimali@bondtex.lk', role: 'Admin', lastLogin: '2026-02-19 08:32', status: 'Active' },
-    { id: 'U002', name: 'Chamari Atapattu', email: 'chamari@bondtex.lk', role: 'HR', lastLogin: '2026-02-19 09:15', status: 'Active' },
-    { id: 'U003', name: 'Gayani Alwis', email: 'gayani@bondtex.lk', role: 'HR', lastLogin: '2026-02-18 17:42', status: 'Active' },
-    { id: 'U004', name: 'Kasun Perera', email: 'kasun@bondtex.lk', role: 'Accounts', lastLogin: '2026-02-19 10:01', status: 'Active' },
-    { id: 'U005', name: 'Sandya Kumari', email: 'sandya@bondtex.lk', role: 'Supervisor', lastLogin: '2026-02-17 14:20', status: 'Active' },
-    { id: 'U006', name: 'Thilak Dissanayake', email: 'thilak@bondtex.lk', role: 'Viewer', lastLogin: '2026-02-15 11:05', status: 'Inactive' },
-    { id: 'U007', name: 'Ajith Bandara', email: 'ajith@bondtex.lk', role: 'Supervisor', lastLogin: '2026-02-19 07:50', status: 'Active' },
+    { id: 'U001', name: 'Nimali Jayawardene', email: 'nimali@Synexa.lk', role: 'Admin', lastLogin: '2026-02-19 08:32', status: 'Active' },
+    { id: 'U002', name: 'Chamari Atapattu', email: 'chamari@Synexa.lk', role: 'HR', lastLogin: '2026-02-19 09:15', status: 'Active' },
+    { id: 'U003', name: 'Gayani Alwis', email: 'gayani@Synexa.lk', role: 'HR', lastLogin: '2026-02-18 17:42', status: 'Active' },
+    { id: 'U004', name: 'Kasun Perera', email: 'kasun@Synexa.lk', role: 'Accounts', lastLogin: '2026-02-19 10:01', status: 'Active' },
+    { id: 'U005', name: 'Sandya Kumari', email: 'sandya@Synexa.lk', role: 'Supervisor', lastLogin: '2026-02-17 14:20', status: 'Active' },
+    { id: 'U006', name: 'Thilak Dissanayake', email: 'thilak@Synexa.lk', role: 'Viewer', lastLogin: '2026-02-15 11:05', status: 'Inactive' },
+    { id: 'U007', name: 'Ajith Bandara', email: 'ajith@Synexa.lk', role: 'Supervisor', lastLogin: '2026-02-19 07:50', status: 'Active' },
 ];
 
 const ROLE_BADGE: Record<Role, 'danger' | 'purple' | 'info' | 'warning' | 'muted'> = {
@@ -146,7 +146,7 @@ function AddUserModal({ onClose }: { onClose: () => void }) {
                         </div>
                         <div className={styles.formField}>
                             <label htmlFor="user-email">Email Address</label>
-                            <input id="user-email" type="email" className={styles.formInput} placeholder="user@bondtex.lk" />
+                            <input id="user-email" type="email" className={styles.formInput} placeholder="user@Synexa.lk" />
                         </div>
                         <div className={styles.formField}>
                             <label htmlFor="user-role">System Role</label>

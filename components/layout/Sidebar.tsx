@@ -173,18 +173,18 @@ export default function Sidebar() {
       <div className={styles.logoArea}>
         {/* Light mode logo */}
         <Image
-          src="/bondtex-logo.png"
-          alt="Bondtex"
+          src="/synexa-logo.png"
+          alt="Synexa"
           width={240}
           height={84}
           className={styles.logoLight}
           style={{ objectFit: 'contain', objectPosition: 'center', width: '100%', height: 'auto' }}
           priority
         />
-        {/* Dark mode logo — white/inverted version */}
+        {/* Dark mode logo — will be inverted via CSS filter */}
         <Image
-          src="/bondtex-logo-dark.png"
-          alt="Bondtex"
+          src="/synexa-logo.png"
+          alt="Synexa"
           width={240}
           height={84}
           className={styles.logoDark}

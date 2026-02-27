@@ -88,7 +88,7 @@ export default function PayslipTemplate() {
                 {/* Header */}
                 <div className={styles.slipHeader}>
                     <div className={styles.companyInfo}>
-                        <h1 className={styles.companyName}>BONDTEX (PVT) LTD</h1>
+                        <h1 className={styles.companyName}>Synexa (PVT) LTD</h1>
                         {si && <p className={styles.companyNameSi}>බොන්ඩ්ටෙක්ස් (පෞද්ගලික) සමාගම</p>}
                         <p className={styles.companyAddr}>No. 45, Industrial Zone, Seeduwa, Sri Lanka</p>
                     </div>
@@ -185,7 +185,7 @@ export default function PayslipTemplate() {
                 {/* Footer */}
                 <div className={styles.slipFooter}>
                     <p>{si ? 'මෙය පරිගණකයෙන් ජනනය කරන ලද ලිපිය වන අතර අත්සන් අවශ්‍ය නොවේ.' : 'This is a computer-generated payslip and does not require a signature.'}</p>
-                    <p>© 2026 Bondtex (Pvt) Ltd · Powered by Bondtex HR System</p>
+                    <p>© 2026 Synexa (Pvt) Ltd · Powered by Synexa HR System</p>
                 </div>
             </div>
         </div>

@@ -11,8 +11,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'Bondtex HR System',
-  description: 'Enterprise HR & Payroll Management System by theDBot LLC — Bondtex',
+  title: 'Synexa HR System',
+  description: 'Enterprise HR & Payroll Management System by theDBot LLC — Synexa',
 };
 
 export default function RootLayout({

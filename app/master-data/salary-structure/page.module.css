@@ -31,8 +31,8 @@
 /* ─── Stat Row ───────────────────────────────────────────── */
 .statsRow {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    gap: 12px;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 16px;
 }
 
 .statCard {
@@ -56,12 +56,24 @@
     flex-shrink: 0;
 }
 
+.statValueWrapper {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
 .statValue {
-    display: block;
     font-size: var(--font-size-xl);
     font-weight: 800;
     color: var(--color-text-primary);
     line-height: 1.1;
+}
+
+.statUnit {
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    color: var(--color-text-secondary);
 }
 
 .statLabel {

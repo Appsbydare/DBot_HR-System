@@ -13,7 +13,7 @@ export default function AppShell({ children }: AppShellProps) {
     const [theme, setTheme] = useState<'light' | 'dark'>('light');
 
     useEffect(() => {
-        const saved = localStorage.getItem('bondtex-theme') as 'light' | 'dark' | null;
+        const saved = localStorage.getItem('Synexa-theme') as 'light' | 'dark' | null;
         if (saved) {
             setTheme(saved);
             document.documentElement.setAttribute('data-theme', saved);
@@ -24,7 +24,7 @@ export default function AppShell({ children }: AppShellProps) {
         const next = theme === 'light' ? 'dark' : 'light';
         setTheme(next);
         document.documentElement.setAttribute('data-theme', next);
-        localStorage.setItem('bondtex-theme', next);
+        localStorage.setItem('Synexa-theme', next);
     };
 
     return (

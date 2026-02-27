@@ -59,16 +59,19 @@ export default function SalaryStructurePage() {
             <div className={styles.statsRow}>
                 {[
                     { label: 'Total Gross Payroll', value: fmt(totalGross), color: 'var(--color-primary)' },
-                    { label: 'EPF Applicable', value: `${Object.values(SALARY_DATA).filter(s => s.epf).length} employees`, color: 'var(--color-success)' },
-                    { label: 'OT Applicable', value: `${Object.values(SALARY_DATA).filter(s => s.ot).length} employees`, color: 'var(--color-warning)' },
-                    { label: 'Min Wage Alerts', value: EMPLOYEES.filter(e => e.alerts.includes('minwage')).length, color: 'var(--color-danger)' },
+                    { label: 'EPF Applicable', value: Object.values(SALARY_DATA).filter(s => s.epf).length.toString(), unit: 'employees', color: 'var(--color-success)' },
+                    { label: 'OT Applicable', value: Object.values(SALARY_DATA).filter(s => s.ot).length.toString(), unit: 'employees', color: 'var(--color-warning)' },
+                    { label: 'Min Wage Alerts', value: EMPLOYEES.filter(e => e.alerts.includes('minwage')).length.toString(), color: 'var(--color-danger)' },
                 ].map(s => (
                     <div key={s.label} className={styles.statCard}>
                         <span className={styles.statIcon} style={{ color: s.color, background: s.color + '18' }}>
                             <DollarSign size={18} />
                         </span>
                         <div>
-                            <span className={styles.statValue}>{s.value}</span>
+                            <div className={styles.statValueWrapper}>
+                                <span className={styles.statValue}>{s.value}</span>
+                                {s.unit && <span className={styles.statUnit}>{s.unit}</span>}
+                            </div>
                             <span className={styles.statLabel}>{s.label}</span>
                         </div>
                     </div>

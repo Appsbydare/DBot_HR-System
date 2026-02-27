@@ -127,7 +127,7 @@ export default function BackupManager() {
                     </div>
                     <div className={styles.configField}>
                         <label className={styles.configLabel}>Backup Storage</label>
-                        <span className={styles.configVal}>Supabase Storage · /backups/bondtex</span>
+                        <span className={styles.configVal}>Supabase Storage · /backups/Synexa</span>
                     </div>
                     <div className={styles.configField}>
                         <label className={styles.configLabel}>Encryption</label>

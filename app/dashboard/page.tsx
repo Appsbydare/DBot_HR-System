@@ -10,8 +10,8 @@ import PayrollSummary from '@/components/dashboard/PayrollSummary';
 import styles from './page.module.css';
 
 export const metadata = {
-    title: 'Dashboard — Bondtex HR System',
-    description: 'HR System Dashboard Overview for Bondtex.',
+    title: 'Dashboard — Synexa HR System',
+    description: 'HR System Dashboard Overview for Synexa.',
 };
 
 export default function DashboardPage() {
