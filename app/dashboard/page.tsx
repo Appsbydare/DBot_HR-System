@@ -26,11 +26,11 @@ export default function DashboardPage() {
                 </div>
                 <div className={styles.liveBadge}>
                     <span className={styles.badgeDot} />
-                    <span>Live · Feb 19, 2026</span>
+                    <span>Live · Feb 27, 2026</span>
                 </div>
             </div>
 
-            {/* ────── Row 1: Stat Cards ────── */}
+            {/* ────── Stat Cards ────── */}
             <div className={styles.statGrid}>
                 <StatCard
                     label="Total Employees"
@@ -62,28 +62,30 @@ export default function DashboardPage() {
                 />
             </div>
 
-            {/* ────── Row 2: Workforce Chart + Upcoming Leaves ────── */}
-            <div className={styles.row2}>
-                <WorkforceChart />
-                <UpcomingLeaves />
-            </div>
+            {/* ────── Main 2-Column Layout ────── */}
+            <div className={styles.mainGrid}>
 
-            {/* ────── Row 3: [Attendance + Payroll stacked] | [Recent Activity] ────── */}
-            <div className={styles.row3}>
-                {/* Left column — two cards stacked */}
-                <div className={styles.row3Left}>
-                    <AttendanceChart />
+                {/* Left Column */}
+                <div className={styles.mainLeft}>
+
+                    {/* Top row: Workforce + Attendance side by side */}
+                    <div className={styles.chartsRow}>
+                        <WorkforceChart />
+                        <AttendanceChart />
+                    </div>
+
+                    {/* Below: Payroll + Quick Actions full width */}
                     <PayrollSummary />
+                    <QuickActions />
                 </div>
 
-                {/* Right column — activity fills full height */}
-                <div className={styles.row3Right}>
+                {/* Right Rail: Upcoming Leaves + Recent Activity */}
+                <div className={styles.mainRight}>
+                    <UpcomingLeaves />
                     <RecentActivity />
                 </div>
-            </div>
 
-            {/* ────── Quick Actions ────── */}
-            <QuickActions />
+            </div>
 
         </div>
     );

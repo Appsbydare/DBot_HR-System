@@ -175,20 +175,20 @@ export default function Sidebar() {
         <Image
           src="/synexa-logo.png"
           alt="Synexa"
-          width={240}
-          height={84}
+          width={192}
+          height={67}
           className={styles.logoLight}
-          style={{ objectFit: 'contain', objectPosition: 'center', width: '100%', height: 'auto' }}
+          style={{ objectFit: 'contain', objectPosition: 'center', width: '80%', height: 'auto' }}
           priority
         />
         {/* Dark mode logo — will be inverted via CSS filter */}
         <Image
           src="/synexa-logo.png"
           alt="Synexa"
-          width={240}
-          height={84}
+          width={192}
+          height={67}
           className={styles.logoDark}
-          style={{ objectFit: 'contain', objectPosition: 'center', width: '100%', height: 'auto' }}
+          style={{ objectFit: 'contain', objectPosition: 'center', width: '80%', height: 'auto' }}
           priority
         />
         <p className={styles.logoSub}>HR System</p>

@@ -4,11 +4,11 @@ import { UserPlus, Clock, FileText, DollarSign, Download } from 'lucide-react';
 import styles from './QuickActions.module.css';
 
 const ACTIONS = [
-    { label: 'Add Employee', href: '/master-data/personal-info', icon: <UserPlus size={20} />, color: 'primary' },
-    { label: 'Mark Attendance', href: '/leave-attendance/attendance', icon: <Clock size={20} />, color: 'info' },
-    { label: 'Apply Leave', href: '/leave-attendance/leave-management', icon: <FileText size={20} />, color: 'warning' },
-    { label: 'Run Payroll', href: '/pay-process/payroll-flow', icon: <DollarSign size={20} />, color: 'success' },
-    { label: 'Export Reports', href: '/reports/mandatory', icon: <Download size={20} />, color: 'purple' },
+    { label: 'Add Employee', href: '/master-data/personal-info', icon: <UserPlus size={26} />, color: 'primary' },
+    { label: 'Mark Attendance', href: '/leave-attendance/attendance', icon: <Clock size={26} />, color: 'info' },
+    { label: 'Apply Leave', href: '/leave-attendance/leave-management', icon: <FileText size={26} />, color: 'warning' },
+    { label: 'Run Payroll', href: '/pay-process/payroll-flow', icon: <DollarSign size={26} />, color: 'success' },
+    { label: 'Export Reports', href: '/reports/mandatory', icon: <Download size={26} />, color: 'purple' },
 ];
 
 const COLOR_MAP: Record<string, string> = {

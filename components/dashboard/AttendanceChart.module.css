@@ -5,6 +5,9 @@
     padding: 22px 24px 16px;
     box-shadow: var(--shadow-card);
     transition: box-shadow var(--transition-base);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .card:hover {
