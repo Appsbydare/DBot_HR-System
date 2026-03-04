@@ -440,8 +440,8 @@
     font-weight: 700;
     padding: 3px 8px;
     border-radius: var(--radius-full);
-    background: #EDE9FE;
-    color: #7C3AED;
+    background: rgba(139, 92, 246, 0.14);
+    color: #A78BFA;
     white-space: nowrap;
 }
 
