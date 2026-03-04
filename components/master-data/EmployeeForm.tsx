@@ -68,8 +68,19 @@ export default function EmployeeForm({ employee, onClose, onSave, initialTab = '
                                             </div>
                                         </div>
                                         <div className={styles.formGrid}>
+                                            <div className={styles.fullWidth}>
+                                                <Select label="Company ID" id="company-id" required>
+                                                    <option value="">Select company</option>
+                                                    <option value="001">001 – Head Office</option>
+                                                    <option value="002">002 – Branch A</option>
+                                                    <option value="003">003 – Branch B</option>
+                                                    <option value="004">004 – Factory</option>
+                                                    <option value="005">005 – Warehouse Unit</option>
+                                                </Select>
+                                            </div>
                                             <Input label="Employee Number" id="emp-no" defaultValue={employee?.empNo} placeholder="e.g. BT-013" required />
-                                            <Input label="Full Name" id="full-name" defaultValue={employee?.fullName} placeholder="As per NIC" required />
+                                            <Input label="Full Name (As per NIC)" id="full-name" defaultValue={employee?.fullName} placeholder="e.g. Kasun Perera" required />
+                                            <Input label="Name With Initials" id="name-initials" placeholder="e.g. K. Perera" required />
                                             <Input label="NIC Number" id="nic" defaultValue={employee?.nic} placeholder="e.g. 901234567V" required />
                                             <Input label="Date of Birth" id="dob" type="date" required />
                                             <Select label="Gender" id="gender" required>
@@ -91,6 +102,20 @@ export default function EmployeeForm({ employee, onClose, onSave, initialTab = '
                                                 <Textarea label="Permanent Address" id="address" rows={2} placeholder="No, Street, City, Province" />
                                             </div>
                                         </div>
+                                        <div className={styles.sectionDivider}><span>Emergency Contact</span></div>
+                                        <div className={styles.formGrid}>
+                                            <Input label="Emergency Contact Name" id="emergency-name" placeholder="Full name" />
+                                            <Select label="Relationship" id="emergency-relation">
+                                                <option value="">Select relationship</option>
+                                                <option>Spouse</option>
+                                                <option>Parent</option>
+                                                <option>Sibling</option>
+                                                <option>Child</option>
+                                                <option>Friend</option>
+                                                <option>Other</option>
+                                            </Select>
+                                            <Input label="Emergency Contact Number" id="emergency-phone" type="tel" placeholder="+94 7X XXX XXXX" />
+                                        </div>
                                     </div>
                                 )}
 
@@ -107,28 +132,30 @@ export default function EmployeeForm({ employee, onClose, onSave, initialTab = '
                                                 {['Development', 'Accounts', 'Payroll', 'Weaving', 'Dyeing', 'Finishing', 'Warehouse'].map(s => <option key={s}>{s}</option>)}
                                             </Select>
                                             <Input label="Designation" id="designation" placeholder="e.g. Software Developer" required />
-                                            <Select label="Category" id="category" required>
+                                            <Select label="Employment Category" id="emp-category" required>
                                                 <option value="">Select category</option>
-                                                <option>Shop & Office</option>
-                                                <option>Assistant</option>
-                                                <option>Management</option>
+                                                <option value="permanent">Permanent</option>
+                                                <option value="probation">Probation</option>
+                                                <option value="casual">Casual</option>
+                                                <option value="trainee">Trainee</option>
                                             </Select>
-                                            <Select label="Act Category" id="act-category">
-                                                <option value="">Select act</option>
-                                                <option>Wages Board</option>
-                                                <option>SLEA</option>
-                                                <option>N/A</option>
+                                            <Select label="Act Category" id="act-category" required>
+                                                <option value="">Select act category</option>
+                                                <option value="wb-worker">Wages Board Employee (Worker)</option>
+                                                <option value="wb-staff">Wages Board Employee (Staff)</option>
+                                                <option value="shop-office">Shop &amp; Office Employee</option>
                                             </Select>
                                             <Select label="Employment Status" id="emp-status">
-                                                <option>Active</option>
-                                                <option>Probation</option>
-                                                <option>Terminated</option>
-                                                <option>Resigned</option>
+                                                <option value="active">Active</option>
+                                                <option value="terminated">Terminated</option>
+                                                <option value="resigned">Resigned</option>
+                                                <option value="retired">Retired</option>
                                             </Select>
-                                            <Input label="Joined Date" id="join-date" type="date" required />
-                                            <Input label="Probation End Date" id="probation-end" type="date" />
-                                            <Input label="Supervisor" id="supervisor" placeholder="Supervisor name" />
-                                            <Input label="Cost Center" id="cost-center" placeholder="e.g. CC-001" />
+                                            <Input label="Join Date" id="join-date" type="date" required />
+                                            <Input label="Confirmation Date" id="confirmation-date" type="date" />
+                                            <Input label="Retirement Date" id="retirement-date" type="date" />
+                                            <Input label="Contract Expiry Date" id="contract-expiry" type="date" />
+                                            <Input label="Supervisor Name / EPF No." id="supervisor" placeholder="Name or EPF number" />
                                         </div>
                                     </div>
                                 )}
@@ -140,22 +167,24 @@ export default function EmployeeForm({ employee, onClose, onSave, initialTab = '
                                             <Input label="Basic Salary (LKR)" id="basic" type="number" placeholder="0.00" required />
                                             <Input label="Budgetary Allowance (LKR)" id="budgetary" type="number" placeholder="0.00" />
                                             <Input label="Attendance Allowance (LKR)" id="attendance-allow" type="number" placeholder="0.00" />
-                                            <Input label="Fixed Allowances (LKR)" id="fixed-allow" type="number" placeholder="0.00" />
+                                            <Input label="Other Fixed Allowances (LKR)" id="fixed-allow" type="number" placeholder="0.00" />
                                         </div>
                                         <div className={styles.sectionDivider}>
-                                            <span>Contribution Flags</span>
+                                            <span>Payroll Flags</span>
                                         </div>
                                         <div className={styles.flagsGrid}>
                                             {[
-                                                { id: 'epf-flag', label: 'EPF Applicable' },
-                                                { id: 'etf-flag', label: 'ETF Applicable' },
-                                                { id: 'ot-flag', label: 'OT Applicable' },
-                                                { id: 'tax-flag', label: 'Tax Applicable' },
-                                                { id: 'nopay-flag', label: 'No-Pay Deduction' },
-                                                { id: 'meal-flag', label: 'Meal Allowance' },
+                                                { id: 'epf-flag', label: 'EPF Applicable', defaultOn: true },
+                                                { id: 'etf-flag', label: 'ETF Applicable', defaultOn: true },
+                                                { id: 'ot-flag', label: 'OT Applicable', defaultOn: false },
+                                                { id: 'tax-flag', label: 'Tax Applicable', defaultOn: false },
+                                                { id: 'nopay-flag', label: 'No-Pay Deduction', defaultOn: false },
+                                                { id: 'meal-flag', label: 'Meal Allowance', defaultOn: false },
+                                                { id: 'bankpaid-flag', label: 'Bank Paid', defaultOn: true },
+                                                { id: 'payenable-flag', label: 'Pay Enable', defaultOn: true },
                                             ].map(f => (
                                                 <label key={f.id} className={styles.flagItem} htmlFor={f.id}>
-                                                    <input id={f.id} type="checkbox" className={styles.flagCheck} defaultChecked={f.id.includes('epf') || f.id.includes('etf')} />
+                                                    <input id={f.id} type="checkbox" className={styles.flagCheck} defaultChecked={f.defaultOn} />
                                                     <span>{f.label}</span>
                                                 </label>
                                             ))}
@@ -172,18 +201,17 @@ export default function EmployeeForm({ employee, onClose, onSave, initialTab = '
                                 {/* ──── Statutory Settings ──── */}
                                 {activeTab === 'statutory' && (
                                     <div className={styles.tabContent}>
-                                        <div className={styles.sectionDivider}><span>EPF / ETF</span></div>
+                                        <div className={styles.sectionDivider}><span>EPF / ETF (Statutory Rates)</span></div>
                                         <div className={styles.formGrid}>
-                                            <Input label="EPF Employee %" id="epf-emp" type="number" placeholder="8" defaultValue="8" />
-                                            <Input label="EPF Employer %" id="epf-er" type="number" placeholder="12" defaultValue="12" />
-                                            <Input label="ETF Employer %" id="etf-rate" type="number" placeholder="3" defaultValue="3" />
-                                            <Select label="Payment Frequency" id="freq">
-                                                <option>Monthly</option>
-                                                <option>Bi-monthly</option>
-                                                <option>Weekly</option>
+                                            <Input label="EPF Employee Contribution" id="epf-emp" type="number" defaultValue="8" readOnly hint="Fixed at 8%" />
+                                            <Input label="EPF Employer Contribution" id="epf-er" type="number" defaultValue="12" readOnly hint="Fixed at 12%" />
+                                            <Input label="ETF Employer Contribution" id="etf-rate" type="number" defaultValue="3" readOnly hint="Fixed at 3%" />
+                                            <Select label="Payroll Frequency" id="freq">
+                                                <option value="monthly">Monthly</option>
+                                                <option value="weekly">Weekly</option>
                                             </Select>
                                         </div>
-                                        <div className={styles.sectionDivider}><span>Bank Details</span></div>
+                                        <div className={styles.sectionDivider}><span>Bank Account Details</span></div>
                                         <div className={styles.formGrid}>
                                             <Input label="Bank Name" id="bank-name" placeholder="e.g. Bank of Ceylon" />
                                             <Input label="Branch" id="bank-branch" placeholder="e.g. Colombo 10" />
@@ -198,6 +226,7 @@ export default function EmployeeForm({ employee, onClose, onSave, initialTab = '
                                         <div className={styles.formGrid}>
                                             <Input label="TIN Number (Optional)" id="tin" placeholder="Tax ID" />
                                             <Input label="APIT Amount (LKR)" id="apit" type="number" placeholder="0.00" />
+                                            <Input label="Cost Center" id="cost-center" placeholder="e.g. CC-001" />
                                         </div>
                                     </div>
                                 )}

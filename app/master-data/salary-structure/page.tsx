@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Edit2, DollarSign, TrendingUp, CheckCircle, AlertCircle } from 'lucide-react';
+import { Edit2, DollarSign } from 'lucide-react';
 import Button from '@/components/ui/Button';
 import Badge from '@/components/ui/Badge';
 import EmployeeForm from '@/components/master-data/EmployeeForm';
@@ -89,8 +89,7 @@ export default function SalaryStructurePage() {
                             <th className={styles.th}>Attendance</th>
                             <th className={styles.th}>Fixed Allow.</th>
                             <th className={styles.th}>Total Gross</th>
-                            <th className={styles.th}>EPF</th>
-                            <th className={styles.th}>OT</th>
+                            <th className={styles.th}>Flags</th>
                             <th className={styles.th}>Alerts</th>
                             <th className={styles.th}>Edit</th>
                         </tr>
@@ -101,7 +100,7 @@ export default function SalaryStructurePage() {
                             const gross = emp.basic + s.budgetary + s.attendance + s.fixed;
                             const minWage = emp.alerts.includes('minwage');
                             return (
-                                <tr key={emp.id} className={`${styles.row} ${minWage ? styles.alertRow : ''}`}>
+                                <tr key={emp.id} className={`${styles.row} ${minWage ? styles.rowHighlight : ''}`}>
                                     <td className={styles.td}>
                                         <div className={styles.nameCell}>
                                             <div className={styles.avatar}>{emp.fullName.split(' ').map(n => n[0]).join('').slice(0, 2)}</div>
@@ -116,8 +115,13 @@ export default function SalaryStructurePage() {
                                     <td className={`${styles.td} ${styles.money}`}>{s.attendance.toLocaleString('en-LK')}</td>
                                     <td className={`${styles.td} ${styles.money}`}>{s.fixed.toLocaleString('en-LK')}</td>
                                     <td className={`${styles.td} ${styles.moneyBold}`}>{gross.toLocaleString('en-LK')}</td>
-                                    <td className={styles.td}>{s.epf ? <CheckCircle size={16} className={styles.iconYes} /> : <span className={styles.iconNo}>—</span>}</td>
-                                    <td className={styles.td}>{s.ot ? <CheckCircle size={16} className={styles.iconYes} /> : <span className={styles.iconNo}>—</span>}</td>
+                                    <td className={styles.td}>
+                                        <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap' }}>
+                                            {s.epf && <span style={{ fontSize: '10px', fontWeight: 700, padding: '2px 6px', borderRadius: '4px', background: 'rgba(16,185,129,0.12)', color: 'var(--color-success)' }}>EPF</span>}
+                                            {s.etf && <span style={{ fontSize: '10px', fontWeight: 700, padding: '2px 6px', borderRadius: '4px', background: 'rgba(16,185,129,0.12)', color: 'var(--color-success)' }}>ETF</span>}
+                                            {s.ot && <span style={{ fontSize: '10px', fontWeight: 700, padding: '2px 6px', borderRadius: '4px', background: 'rgba(245,158,11,0.12)', color: 'var(--color-warning)' }}>OT</span>}
+                                        </div>
+                                    </td>
                                     <td className={styles.td}>
                                         {minWage && <Badge variant="danger" dot>Min Wage</Badge>}
                                     </td>

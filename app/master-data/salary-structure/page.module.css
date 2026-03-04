@@ -125,11 +125,11 @@
     background: var(--color-main-bg);
 }
 
-.alertRow {
+.rowHighlight {
     background: #fff8f8;
 }
 
-[data-theme='dark'] .alertRow {
+[data-theme='dark'] .rowHighlight {
     background: rgba(230, 57, 70, 0.04);
 }
 
